@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:form id="mF">
+    	<ui:repeat var="item" value="#{restaurant.menu}">			
+         <div class="menu-item-info-box">
+             <span class="menu-item-info-box-icon"><img src="#{item.imagePath}"/></span>
+
+             <div class="menu-item-info-box-content">
+               <span class="menu-item-info-box-text">#{item.name}</span>
+               <span class="menu-item-info-box-detail">#{item.description}</span>
+               <h:outputText class="menu-item-info-box-price" value="#{item.price}">
+               		<f:convertNumber type="currency"/>
+               </h:outputText>
+               <h:commandLink action="#">
+               	<i class="fa fa-plus-circle"></i> Adicionar
+               </h:commandLink>
+             </div>
+             <!-- /.info-box-content -->
+           </div>
+         <!-- /.info-box -->
+     </ui:repeat>
+    </h:form>    
+    
+</ui:composition>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="WEB-INF/xhtml/template/template.xhtml">
+
+	<ui:define name="content">
+		  <h:messages id="messages" class="alert alert-info"/>
+		  		  
+	      <section class="content-header">
+	        <h1>
+	          Todos os Restaurantes
+	        </h1>
+	      </section>
+
+	      <section class="content">
+	      	<div class="row">
+				<h:form id="rF">						        
+					<ui:repeat var="r" value="#{restaurants}">
+	          	<h:commandLink action="#{restaurantManager.showRestaurantDetails(r)}">
+				          <div class="col-sm-6 col-xs-12">
+				              <div class="place-info-box">
+				                <span class="place-info-box-icon"><img src="#{r.imagePath}" /></span>
+				
+				                <div class="place-info-box-content">
+				                  <span class="place-info-box-text">#{r.name}</span>
+				                  <span class="place-info-box-star"><i class="fa fa-star"></i> #{r.rating}</span>
+				                  <span class="place-info-box-detail">#{r.category}</span>
+				                  <span class="place-info-box-detail">#{r.deliveryEstimate}</span>	
+				                </div>
+				                <!-- /.info-box-content -->
+				              </div>
+				              <!-- /.info-box -->
+				          </div>
+			          	  <!-- /.col -->
+					  </h:commandLink>
+					</ui:repeat>
+	        	</h:form>
+	        </div>
+	      </section>       
+      </ui:define>
+</ui:composition>

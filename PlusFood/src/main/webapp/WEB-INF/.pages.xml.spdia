@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram model-entity="SeamPagesDiagram">
+ <item ID="#main-restaurants.xhtml" NAME="#xmain-restaurants.xhtml"
+  PATH="/main-restaurants.xhtml" SHAPE="24,17,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/detail-restaurant.xhtml" NAME="output"
+   PATH="/detail-restaurant.xhtml" TARGET="#xdetail-restaurant.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+ <item ID="#detail-restaurant.xhtml" NAME="#xdetail-restaurant.xhtml"
+  PATH="/detail-restaurant.xhtml" SHAPE="344,121,0,0" TYPE="page" model-entity="SeamPagesDiagramItem">
+  <output ID="/main-restaurants.xhtml" NAME="output"
+   PATH="/main-restaurants.xhtml" TARGET="#xmain-restaurants.xhtml" model-entity="SeamPagesDiagramItemOutput"/>
+ </item>
+</diagram>

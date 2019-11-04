@@ -1,0 +1,17 @@
+1. As instruções e requisitos estão no arquivo PlusFood/PlusFood/src/main/webapp/README.md
+
+Abrir dentro do Eclipse e utilizar a aba preview (parte inferior do editor)
+
+2. Instalação da implementação do JSF 1.2 (Mojarra)
+
+Certifique-se de ter instalado o plugin JBoss Tools e criado um novo server para o Wildfly 9.x porque para a execução do comando abaixo, o servidor deverá estar sendo executado, mesmo estando sem a aplicação.
+
+Descompactar e executar o comando a partir do diretório "docs":
+
+Ex.: unzip -j Mojarra.zip - a opção -j não cria um diretório "Mojarra", extraindo os arquivos diretamente no diretório "docs".
+
+Windows:
+<JBOSS_HOME>/bin/jboss-cli.bat -c --file=mojarra-install.cli
+
+Linux:
+<JBOSS_HOME>/bin/jboss-cli.sh -c --file=mojarra-install.cli

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    template="WEB-INF/xhtml/template/template.xhtml">
+
+	<ui:define name="content">
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+
+	        <div class="row">
+	           <div class="col-xs-12">
+			   	 <ui:include src="WEB-INF/xhtml/includes/restaurant.xhtml" />
+	           </div>
+	        </div>
+	
+	        <div class="row">
+	           <div class="col-md-8 col-xs-12">
+				 <ui:include src="WEB-INF/xhtml/includes/menu.xhtml" />
+	           </div>
+	           
+	           <div class="col-md-4 col-xs-12">
+				 <ui:include src="WEB-INF/xhtml/includes/shoppingCart.xhtml" />
+	           </div>
+	      </div>
+
+      </section>	
+	</ui:define>	
+</ui:composition>

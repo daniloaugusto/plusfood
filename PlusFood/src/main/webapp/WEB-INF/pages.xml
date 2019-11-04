@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd">
+
+ <page view-id="/main-restaurants.xhtml">
+  <navigation from-action="#{restaurantManager.showRestaurantDetails(r)}">
+   <render view-id="/detail-restaurant.xhtml"/>
+  </navigation>
+ </page>
+ 
+ <page view-id="/detail-restaurant.xhtml">
+  <navigation>
+  	<rule if-outcome="orderCanceled">
+  		<redirect view-id="/main-restaurants.xhtml"/>
+  	</rule>
+
+		<!-- Confirmação da compra -->
+  </navigation>
+ </page>
+
+</pages>

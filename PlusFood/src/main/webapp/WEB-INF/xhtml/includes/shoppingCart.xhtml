@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+		
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:s="http://jboss.com/products/seam/taglib"
+  xmlns:f="http://java.sun.com/jsf/core">
+
+    <!--INICIO DO CARRINHO-->
+     <div class="box box-solid">
+       <div class="box-header">
+         <i class="fa fa-shopping-cart"></i>
+
+         <h3 class="box-title">Carrinho</h3>
+       </div>
+       <!-- /.box-header -->
+       <div class="box-body">
+         <!-- info carrinho vazio -->
+         <div id="tbPedido" class="table-responsive">
+             <table class="table">
+               <tbody>
+               <h:form id="itensF">
+	               <ui:repeat var="item" value="#{shoppingcart.itens}" rendered="#{not empty shoppingcart.itens}">
+		               <tr>
+		                 <th>
+			                 	<h:commandLink action="#">
+			                 	  <i style="margin-right: 1ch; color: #dd4b39; cursor: pointer;" class="fa fa-minus"></i>
+			                 	</h:commandLink>
+			                 		                 	
+			                 	<span class="small">#{item.name}</span>
+		                 </th>
+		
+		                 <td class="text-right">
+			                 	<span style="margin-right: 1ch">#{item.quantity}</span>
+			                 	x
+		                 		<h:outputText style="margin-left: 1ch" value="#{item.price}">
+		                 			<f:convertNumber type="currency"/>
+		                 		</h:outputText>
+		                 		
+		                 		<h:outputText style="margin-left: 30px; color: blue;" value="#{item.quantity * item.price}">
+		                 			<f:convertNumber type="currency"/>
+		                 		</h:outputText>                 		
+		                 </td>	
+		               </tr>
+								</ui:repeat>
+							</h:form>
+               <tr>
+                 <th>Entrega:</th>
+
+                 <td class="text-right">R$ 8,00</td>
+               </tr>
+               <tr>
+                 <th>Total:</th>
+
+                 <td class="text-right">R$ 0,00</td>
+               </tr>
+             </tbody>
+           </table>
+        </div>
+       </div>
+       <div class="box-footer">
+         <div class="pull-right">
+					<s:link styleClass="btn btn-danger" action="#{shoppingcart.cancelarPedido()}"><i class="fa fa-trash"></i> Cancelar</s:link> 
+					<s:link styleClass="btn btn-success" action="#{shoppingcart.confirmarPedido()}"><i class="fa fa-credit-card"></i> Confirmar</s:link>
+         </div>
+       </div>
+   </div>
+   <!-- FIM DO CARRINHO -->
+
+</ui:composition>    
