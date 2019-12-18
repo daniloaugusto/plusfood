@@ -13,8 +13,10 @@
   	<rule if-outcome="orderCanceled">
   		<redirect view-id="/main-restaurants.xhtml"/>
   	</rule>
-
 		<!-- Confirmação da compra -->
+	<rule if-outcome="orderConfirmed">
+		<redirect view-id="/order-summary.xhtml"/>
+	</rule>
   </navigation>
  </page>
 

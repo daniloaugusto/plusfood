@@ -28,6 +28,7 @@ public class Shoppingcart {
 	private Log log;
 	
 	private List<Item> itens = new ArrayList<>();	
+	private double totalPrice = 0;
 
 	public List<Item> getItens() {
 		return itens;
@@ -37,9 +38,27 @@ public class Shoppingcart {
 		throw new IllegalArgumentException();
 	}	
 
-	public void addItem(Item item) {}
+	public void addItem(Item item) {
+		int quantity = item.getQuantity();
+		if (quantity == 0) {
+			itens.add(item);
+		}
+		item.setQuantity(++quantity);
+		totalPrice += item.getPrice();	
+	}
 	
-	public void removeItem(Item item) {}
+	public void removeItem(Item item) {
+		int quantity = item.getQuantity();
+		item.setQuantity(--quantity);
+		if (quantity == 0) {
+			itens.remove(itens.indexOf(item));
+		}
+		totalPrice -= item.getPrice();
+	}
+	
+	public double getTotalPrice() {
+		return totalPrice;
+	}
 	
 	@RaiseEvent(EV_CONFIRM_NAME)
 	public String confirmarPedido() {
